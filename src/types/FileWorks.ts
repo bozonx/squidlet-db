@@ -1,6 +1,7 @@
-import * as fs from 'fs/promises';
+import * as fs from 'node:fs/promises';
 import {SquidletDbDocument} from './SquidletDbDocument';
 import {FILE_ENCODING} from './constants';
+import {makeFilePath} from '../helpers';
 
 
 export class FileWorks {
@@ -14,16 +15,17 @@ export class FileWorks {
 
   async load(path: string, docId: string): Promise<SquidletDbDocument> {
     // TODO: наверное лучше добавить дату создания в имя файла
-    // TODO: указать кодировку
-    // TODO: убрать последний слэш
-    const filePath = path + '/' + docId
+
+    const filePath = makeFilePath(this.rootPath, path, docId)
     // TODO: handle error
     const res = await fs.readFile(filePath, FILE_ENCODING)
+    const parsed = JSON.parse(res)
 
-    return JSON.parse(res)
+    return parsed
   }
 
   async create(path: string, docId: string, docData: Record<string, any>) {
+    const filePath = makeFilePath(this.rootPath, path, docId)
     // TODO: make dir
   }
 

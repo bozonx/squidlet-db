@@ -3,9 +3,11 @@ import {SquidletDbFilterRes} from './types/SquidletDbFilterRes';
 import {FindHandler} from './types/types';
 import {SquidletDbConfig} from './types/SquidletDbConfig';
 import {FileWorks} from './types/FileWorks';
+import {prepareConfig} from './helpers';
 
 
 // TODO: добавить middleware для проверки прав и целостности связей
+// TODO: версионирование делать за счёт файлового api ???
 
 
 export class SquidletDb {
@@ -14,7 +16,7 @@ export class SquidletDb {
 
 
   constructor(config: SquidletDbConfig) {
-    this.config = config
+    this.config = prepareConfig(config)
     this.fileWorks = new FileWorks(config.rootPath)
   }
 
