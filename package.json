@@ -1,0 +1,23 @@
+{
+  "name": "squidlet-db",
+  "version": "0.0.1",
+  "description": "File based document data base",
+  "author": "Ivan Kozyrin <ipkozyrin@gmail.com>",
+  "repository": "git@github.com:bozonx/squidlet.git",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT",
+  "scripts": {
+    "test": "mocha",
+    "lint": "tslint -p tsconfig.json"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.0",
+    "ts-node": "10.9.1",
+    "tslint": "^6.1.3",
+    "typescript": "^4.9.5"
+  }
+}
