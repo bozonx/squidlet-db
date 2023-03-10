@@ -29,7 +29,7 @@ export class FileWorks {
     // TODO: make dir
   }
 
-  async update(path: string, docId: string, docData: Record<string, any>) {
+  async update(docToUpdate: SquidletDbDocument) {
     // TODO: if doesn't exist - throw an error
     // TODO: make dir
   }

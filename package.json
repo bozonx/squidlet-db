@@ -13,6 +13,7 @@
     "lint": "tslint -p tsconfig.json"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "squidlet-lib": "../squidlet-lib"
   },
   "devDependencies": {

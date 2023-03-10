@@ -1,6 +1,7 @@
 import path from 'node:path';
 import {trimCharEnd} from 'squidlet-lib/src/strings'
 import {SquidletDbConfig} from './types/SquidletDbConfig';
+import moment from 'moment/moment';
 
 
 export function makeFilePath(rootPath: string, localPath: string, fileName: string): string {
@@ -12,4 +13,8 @@ export function prepareConfig(config: SquidletDbConfig): SquidletDbConfig {
     ...config,
     rootPath: trimCharEnd(config.rootPath),
   }
+}
+
+export function makeCurrentIsoDateTime(): string {
+  return moment().utc().format()
 }
